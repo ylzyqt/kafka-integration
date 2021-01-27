@@ -10,6 +10,20 @@ curl -X GET http://localhost:8081/config
 curl -X PUT -H "Content-Type: application/json" \
     --data '{"compatibility": "NONE"}' \
     http://localhost:8081/config
+    
+    
+curl -X GET http://localhost:8081/config
+ 
+ curl -X PUT -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"compatibility": "BACKWARD"}' http://localhost:8081/config/databus.event.shouqianba.order.allin-value
+ 
+ 
+ curl -X GET http://localhost:8081/config/databus.event.shouqianba.order.allin-value
+ 
+ 
+
+curl -X PUT -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"compatibility": "BACKWARD"}' http://localhost:8081/config/databus.event.dbb.orders.allin-value
+
+ curl -X GET http://localhost:8081/config/databus.event.dbb.orders.allin-value    
 ```
 
 - Backward compatibility (default): A new schema is backwards compatible if it can be used to read the data written in the latest registered schema.
